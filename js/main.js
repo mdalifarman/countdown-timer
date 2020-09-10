@@ -1,12 +1,12 @@
 'use strict'
 
-function $(selector){
+function $(selector) {
     return document.querySelector(selector);
 }
 
-let endDate = new Date('2020/9/30 12:00:00').getTime();
+let endDate = new Date('2021/9/30 12:00:00').getTime();
 
-let countTime = setInterval(function() {
+function countDown() {
     let today = new Date().getTime();
     let timer = endDate - today;
 
@@ -23,6 +23,6 @@ let countTime = setInterval(function() {
     } else {
         $('#countdown-wrap').innerHTML = 'Sorry Offer is Closed Now';
     }
-
-
-}, 1000);
+    setInterval(countDown, 1000);
+}
+countDown();
